@@ -199,23 +199,32 @@ async function envoyer(){
   const e = verifie(); $("err").textContent = e;
   if (e){ $("err").scrollIntoView({behavior:"smooth", block:"center"}); return; }
   if (!photos.length && !confirm("Aucune photo ajoutée. Envoyer quand même ? (Vous pourrez les envoyer ensuite par WhatsApp)")) return;
-  const b = $("go"); b.disabled = true; b.textContent = "Envoi en cours…";
-  const fd = new FormData();
-  fd.append("_subject", `🏠 ${pose().startsWith("KIT") ? "KIT" : "POSE"} – ${v("nom")} – ${v("commune")}`);
-  fd.append("_template", "box"); fd.append("_captcha", "false");
-  fd.append("Type de demande", pose());
-  fd.append("Nom", v("nom")); fd.append("Téléphone", v("tel")); fd.append("E-mail", v("email"));
-  fd.append("Commune", v("commune")); fd.append("Coloris", v("coloris")); fd.append("Source", SOURCE);
-  if (v("email")) fd.append("_replyto", v("email"));
-  photos.forEach((p,i) => fd.append("photo" + (i+1), p.blob, `photo-${i+1}.jpg`));
-  try{
-    const r = await fetch("https://formsubmit.co/ajax/" + EMAIL_DEST, { method:"POST", body:fd, headers:{Accept:"application/json"} });
-    if (!r.ok) throw 0;
-    $("f").classList.add("hide"); $("merci").classList.remove("hide"); window.scrollTo(0,0);
-  }catch(_){
-    $("err").textContent = "L'envoi n'a pas marché (connexion ?). Utilisez le bouton WhatsApp juste en dessous.";
-    b.disabled = false; b.textContent = "✅ Réessayer";
+  const b = $("go"); b.disabled = true; b.textContent = "Envoi en cours… (quelques secondes)";
+  try{ sessionStorage.setItem("uniso_nom", v("nom")); sessionStorage.setItem("uniso_commune", v("commune")); }catch(_){}
+  // Envoi classique (et non AJAX) : seul mode où FormSubmit transmet les photos en pièces jointes
+  const form = document.createElement("form");
+  form.method = "POST"; form.action = "https://formsubmit.co/" + EMAIL_DEST; form.enctype = "multipart/form-data";
+  form.style.display = "none";
+  const add = (n, val) => { const i = document.createElement("input"); i.type = "hidden"; i.name = n; i.value = val; form.appendChild(i); };
+  add("_subject", `🏠 ${pose().startsWith("KIT") ? "KIT" : "POSE"} – ${v("nom")} – ${v("commune")}`);
+  add("_template", "box"); add("_captcha", "false");
+  add("_next", location.origin + location.pathname + "?merci=1");
+  add("Type de demande", pose());
+  add("Nom", v("nom")); add("Téléphone", v("tel")); add("E-mail", v("email"));
+  add("Commune", v("commune")); add("Coloris", v("coloris")); add("Source", SOURCE);
+  if (v("email")) add("_replyto", v("email"));
+  if (photos.length){
+    const fi = document.createElement("input"); fi.type = "file"; fi.name = "attachment"; fi.multiple = true;
+    const dt = new DataTransfer();
+    photos.forEach((p,i) => dt.items.add(new File([p.blob], `photo-${i+1}.jpg`, { type:"image/jpeg" })));
+    fi.files = dt.files; form.appendChild(fi);
   }
+  document.body.appendChild(form);
+  form.submit();
+}
+if (P.get("merci")){
+  try{ $("nom").value = sessionStorage.getItem("uniso_nom") || ""; $("commune").value = sessionStorage.getItem("uniso_commune") || ""; }catch(_){}
+  $("f").classList.add("hide"); $("merci").classList.remove("hide");
 }
 function openWA(apres){
   const t = apres ? `Bonjour, je viens d'envoyer ma demande (${v("nom")}, ${v("commune")}). Voici d'autres photos :`
