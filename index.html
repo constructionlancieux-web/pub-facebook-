@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Estimation gratuite isolation extérieure – Ouest Eco Logis</title>
+<meta name="description" content="Recevez une estimation gratuite pour l'isolation par l'extérieur de votre maison, sans déplacement. Ouest Eco Logis – Uniso.">
+<meta property="og:title" content="Estimation gratuite de votre isolation extérieure, sans déplacement">
+<meta property="og:description" content="Quelques cotes + 2 photos de votre maison = un devis estimatif Uniso offert.">
+<style>
+:root{
+  --vert:#2f7d4f; --vert-f:#1f5a37; --vert-c:#e8f3ec;
+  --rouge:#c62828; --gris:#5f6b66; --bord:#d6dfda; --fond:#f6f8f7;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:#1d2622;font-size:17px;line-height:1.4}
+header{background:var(--vert);color:#fff;padding:18px 16px 22px}
+header h1{margin:0 0 6px;font-size:1.35rem;line-height:1.2}
+header p{margin:0;opacity:.92;font-size:.95rem}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.badge{background:rgba(255,255,255,.18);border-radius:20px;padding:4px 10px;font-size:.8rem}
+main{max-width:640px;margin:0 auto;padding:0 12px 120px}
+.progress{display:flex;gap:6px;margin:16px 0 8px}
+.progress span{flex:1;height:6px;border-radius:3px;background:var(--bord)}
+.progress span.on{background:var(--vert)}
+.steplabel{font-size:.85rem;color:var(--gris);margin-bottom:10px}
+.card{background:#fff;border:1px solid var(--bord);border-radius:14px;padding:16px;margin-bottom:14px}
+.card h2{margin:0 0 4px;font-size:1.15rem}
+.card .sub{margin:0 0 14px;color:var(--gris);font-size:.92rem}
+label{display:block;font-weight:600;font-size:.95rem;margin:12px 0 5px}
+label small{font-weight:400;color:var(--gris)}
+input[type=text],input[type=tel],input[type=email],input[type=number],select,textarea{
+  width:100%;padding:12px;border:1.5px solid var(--bord);border-radius:10px;font-size:1rem;background:#fff;font-family:inherit}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--vert)}
+.row{display:flex;gap:10px}.row>*{flex:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{display:none}
+.chips label{margin:0;font-weight:500;border:1.5px solid var(--bord);border-radius:22px;padding:9px 14px;cursor:pointer;background:#fff;font-size:.93rem}
+.chips input:checked+label{background:var(--vert);border-color:var(--vert);color:#fff}
+.chips label small{color:inherit;opacity:.8}
+.check{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:.88rem;color:var(--gris)}
+.check input{width:22px;height:22px;flex:none;margin-top:1px;accent-color:var(--vert)}
+.btns{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--bord);padding:10px 12px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;justify-content:center}
+.btns>div{display:flex;gap:10px;width:100%;max-width:640px}
+button{font-family:inherit;font-size:1rem;font-weight:700;border:none;border-radius:12px;padding:14px 16px;cursor:pointer}
+.b-prim{background:var(--vert);color:#fff;flex:2}
+.b-sec{background:var(--vert-c);color:var(--vert-f);flex:1}
+.b-wa{background:#25d366;color:#fff;width:100%;margin-top:10px}
+.b-mail{background:#fff;border:1.5px solid var(--bord);color:#1d2622;width:100%;margin-top:10px}
+.b-small{background:var(--vert-c);color:var(--vert-f);padding:10px 14px;font-size:.92rem}
+.hide{display:none!important}
+.err{color:var(--rouge);font-size:.88rem;margin-top:8px;min-height:1em}
+svg.croquis{width:100%;height:auto;background:#fbfcfb;border:1px dashed var(--bord);border-radius:10px;margin-bottom:6px}
+.cote{display:flex;align-items:center;gap:10px;margin-top:8px}
+.cote .let{flex:none;width:32px;height:32px;border-radius:50%;background:var(--rouge);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.cote .lab{flex:1;font-size:.93rem}
+.cote input{width:110px;flex:none;text-align:right}
+.cote .u{width:22px;color:var(--gris);font-size:.85rem}
+.ouv{border:1px solid var(--bord);border-radius:10px;padding:10px;margin-top:8px;position:relative;background:#fbfcfb}
+.ouv .x{position:absolute;top:6px;right:8px;background:none;border:none;font-size:1.3rem;color:var(--gris);padding:2px 6px}
+.ouv .row input,.ouv select{padding:9px;font-size:.95rem}
+.ouv .mini{font-size:.78rem;color:var(--gris);margin:6px 0 3px;font-weight:600}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.photos div{position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden;background:#eee}
+.photos img{width:100%;height:100%;object-fit:cover}
+.photos button{position:absolute;top:4px;right:4px;background:rgba(0,0,0,.6);color:#fff;border-radius:50%;width:28px;height:28px;padding:0;font-size:1rem}
+.drop{display:block;border:2px dashed var(--vert);border-radius:12px;padding:20px;text-align:center;color:var(--vert-f);font-weight:600;background:var(--vert-c);cursor:pointer;margin:0}
+.drop input{display:none}
+.tip{background:#fff8e1;border-radius:10px;padding:10px 12px;font-size:.88rem;margin-top:10px}
+.contact{text-align:center;margin:18px 0 6px}
+.contact .nom{font-weight:700}
+.contact a{color:var(--rouge);font-weight:800;font-size:1.25rem;text-decoration:none;display:block;margin-top:3px}
+.ok{text-align:center;padding:26px 16px}
+.ok .big{font-size:3rem}
+.recap{font-size:.9rem;background:var(--fond);border-radius:10px;padding:10px 12px;white-space:pre-wrap;max-height:240px;overflow:auto}
+footer{text-align:center;font-size:.78rem;color:var(--gris);padding:10px 16px 30px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Isolation par l'extérieur : votre estimation gratuite, sans déplacement</h1>
+  <p>Quelques mesures et 2 ou 3 photos de votre maison. Stéphane, votre conseiller Ouest Eco Logis, vous envoie un devis estimatif Uniso personnalisé.</p>
+  <div class="badges"><span class="badge">✅ Gratuit et sans engagement</span><span class="badge">⏱ 5 minutes</span><span class="badge">📍 Ille-et-Vilaine, Côtes-d'Armor</span></div>
+</header>
+
+<main>
+  <div class="progress" id="progress"><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="steplabel" id="steplabel"></div>
+
+  <form id="f" novalidate onsubmit="return false">
+
+  <!-- ÉTAPE 1 : COORDONNÉES -->
+  <section class="step" data-step="1">
+    <div class="card">
+      <h2>Vos coordonnées</h2>
+      <p class="sub">Pour vous envoyer votre devis estimatif.</p>
+      <label for="nom">Nom et prénom</label>
+      <input type="text" id="nom" autocomplete="name" placeholder="Ex. Marie Dupont">
+      <label for="tel">Téléphone <small>(mobile de préférence)</small></label>
+      <input type="tel" id="tel" autocomplete="tel" inputmode="tel" placeholder="06 12 34 56 78">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" autocomplete="email" inputmode="email" placeholder="vous@exemple.fr">
+      <div class="row">
+        <div><label for="cp">Code postal</label><input type="text" id="cp" inputmode="numeric" maxlength="5" placeholder="22130"></div>
+        <div><label for="commune">Commune</label><input type="text" id="commune" placeholder="Ex. Plancoët"></div>
+      </div>
+      <label>Je préfère être recontacté(e) par</label>
+      <div class="chips">
+        <input type="radio" name="pref" id="p1" value="Téléphone" checked><label for="p1">📞 Téléphone</label>
+        <input type="radio" name="pref" id="p2" value="WhatsApp / SMS"><label for="p2">💬 WhatsApp / SMS</label>
+        <input type="radio" name="pref" id="p3" value="E-mail"><label for="p3">✉️ E-mail</label>
+      </div>
+      <div class="check"><input type="checkbox" id="rgpd"><label for="rgpd" style="margin:0;font-weight:400">J'accepte qu'Ouest Eco Logis utilise ces informations pour me recontacter au sujet de ma demande d'estimation. Elles ne seront ni revendues ni transmises.</label></div>
+      <div class="err" id="err1"></div>
+    </div>
+  </section>
+
+  <!-- ÉTAPE 2 : MA MAISON -->
+  <section class="step hide" data-step="2">
+    <div class="card">
+      <h2>Votre maison</h2>
+      <p class="sub">Répondez à ce que vous savez. Si vous hésitez, laissez vide.</p>
+      <label>Année de construction (environ)</label>
+      <div class="chips">
+        <input type="radio" name="annee" id="a1" value="Avant 1950"><label for="a1">Avant 1950</label>
+        <input type="radio" name="annee" id="a2" value="1950-1975"><label for="a2">1950-1975</label>
+        <input type="radio" name="annee" id="a3" value="1975-2000"><label for="a3">1975-2000</label>
+        <input type="radio" name="annee" id="a4" value="Après 2000"><label for="a4">Après 2000</label>
+      </div>
+      <label>Type de mur actuel</label>
+      <div class="chips">
+        <input type="radio" name="mur" id="m1" value="Parpaing"><label for="m1">Parpaing</label>
+        <input type="radio" name="mur" id="m2" value="Brique"><label for="m2">Brique</label>
+        <input type="radio" name="mur" id="m3" value="Pierre"><label for="m3">Pierre</label>
+        <input type="radio" name="mur" id="m4" value="Bois"><label for="m4">Bois</label>
+        <input type="radio" name="mur" id="m5" value="Je ne sais pas"><label for="m5">Je ne sais pas</label>
+      </div>
+      <label>Volets</label>
+      <div class="chips">
+        <input type="radio" name="volets" id="v1" value="Oui"><label for="v1">Oui</label>
+        <input type="radio" name="volets" id="v2" value="Non"><label for="v2">Non</label>
+      </div>
+      <label>Aspect souhaité</label>
+      <div class="chips">
+        <input type="radio" name="aspect" id="as1" value="Crépi"><label for="as1">Crépi</label>
+        <input type="radio" name="aspect" id="as2" value="Clin vertical"><label for="as2">Clin vertical</label>
+        <input type="radio" name="aspect" id="as3" value="Clin veiné vertical"><label for="as3">Clin veiné</label>
+        <input type="radio" name="aspect" id="as4" value="Lisse"><label for="as4">Lisse</label>
+        <input type="radio" name="aspect" id="as5" value="Plissé"><label for="as5">Plissé</label>
+        <input type="radio" name="aspect" id="as6" value="À conseiller"><label for="as6">Conseillez-moi</label>
+      </div>
+      <label for="coloris">Coloris approximatif</label>
+      <input type="text" id="coloris" placeholder="Ex. blanc cassé, gris clair…">
+      <label>Épaisseur d'isolant</label>
+      <div class="chips">
+        <input type="radio" name="ep" id="e1" value="32 mm (R 1,45)"><label for="e1">32 mm <small>R 1,45</small></label>
+        <input type="radio" name="ep" id="e2" value="85 mm (R 3,80)"><label for="e2">85 mm <small>R 3,80</small></label>
+        <input type="radio" name="ep" id="e3" value="102 mm (R 4,60)"><label for="e3">102 mm <small>R 4,60</small></label>
+        <input type="radio" name="ep" id="e4" value="À conseiller"><label for="e4">Conseillez-moi</label>
+      </div>
+      <label>Pose</label>
+      <div class="chips">
+        <input type="radio" name="pose" id="po1" value="Pose par l'entreprise"><label for="po1">Pose par l'entreprise</label>
+        <input type="radio" name="pose" id="po2" value="Kit auto-construction"><label for="po2">Kit, je pose moi-même</label>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÉTAPE 3 : COTES -->
+  <section class="step hide" data-step="3">
+    <div class="card">
+      <h2>Les mesures de votre maison</h2>
+      <p class="sub">En mètres, à 10 cm près, c'est suffisant. Un mètre ruban ou un télémètre suffit.</p>
+
+      <svg class="croquis" viewBox="0 0 360 200" aria-label="Croquis façade et pignon">
+        <!-- façade -->
+        <text x="105" y="16" font-size="11" text-anchor="middle" fill="#5f6b66">FAÇADE</text>
+        <polygon points="20,60 190,60 170,30 40,30" fill="#e7ece9" stroke="#8a9a92"/>
+        <rect x="20" y="60" width="170" height="90" fill="#fff" stroke="#1d2622" stroke-width="2"/>
+        <rect x="40" y="80" width="28" height="34" fill="#dbe9f5" stroke="#5f6b66"/>
+        <rect x="140" y="80" width="28" height="34" fill="#dbe9f5" stroke="#5f6b66"/>
+        <rect x="92" y="98" width="26" height="52" fill="#d9c7b0" stroke="#5f6b66"/>
+        <line x1="20" y1="168" x2="190" y2="168" stroke="#c62828" stroke-width="1.5" marker-start="url(#ar)" marker-end="url(#ar)"/>
+        <circle cx="105" cy="168" r="9" fill="#c62828"/><text x="105" y="172" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">A</text>
+        <line x1="8" y1="60" x2="8" y2="150" stroke="#c62828" stroke-width="1.5" marker-start="url(#ar)" marker-end="url(#ar)"/>
+        <circle cx="8" cy="105" r="8" fill="#c62828"/><text x="8" y="109" font-size="10" fill="#fff" text-anchor="middle" font-weight="700">B</text>
+        <line x1="202" y1="60" x2="202" y2="150" stroke="#c62828" stroke-width="1.5" marker-start="url(#ar)" marker-end="url(#ar)"/>
+        <circle cx="202" cy="105" r="8" fill="#c62828"/><text x="202" y="109" font-size="10" fill="#fff" text-anchor="middle" font-weight="700">C</text>
+        <!-- pignon -->
+        <text x="290" y="16" font-size="11" text-anchor="middle" fill="#5f6b66">PIGNON</text>
+        <polygon points="240,150 240,75 290,30 340,75 340,150" fill="#fff" stroke="#1d2622" stroke-width="2"/>
+        <rect x="278" y="95" width="24" height="28" fill="#dbe9f5" stroke="#5f6b66"/>
+        <line x1="240" y1="168" x2="340" y2="168" stroke="#c62828" stroke-width="1.5" marker-start="url(#ar)" marker-end="url(#ar)"/>
+        <circle cx="290" cy="168" r="9" fill="#c62828"/><text x="290" y="172" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">D</text>
+        <line x1="352" y1="30" x2="352" y2="150" stroke="#c62828" stroke-width="1.5" marker-start="url(#ar)" marker-end="url(#ar)"/>
+        <circle cx="352" cy="92" r="8" fill="#c62828"/><text x="352" y="96" font-size="10" fill="#fff" text-anchor="middle" font-weight="700">E</text>
+        <defs><marker id="ar" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c62828"/></marker></defs>
+        <text x="180" y="194" font-size="10" text-anchor="middle" fill="#5f6b66">Mesures en mètres, du sol jusqu'au bas de la toiture</text>
+      </svg>
+
+      <div class="cote"><span class="let">A</span><span class="lab">Longueur de la façade</span><input type="number" step="0.01" inputmode="decimal" id="cA"><span class="u">m</span></div>
+      <div class="cote"><span class="let">B</span><span class="lab">Hauteur côté gauche</span><input type="number" step="0.01" inputmode="decimal" id="cB"><span class="u">m</span></div>
+      <div class="cote"><span class="let">C</span><span class="lab">Hauteur côté droit</span><input type="number" step="0.01" inputmode="decimal" id="cC"><span class="u">m</span></div>
+      <div class="cote"><span class="let">D</span><span class="lab">Largeur du pignon</span><input type="number" step="0.01" inputmode="decimal" id="cD"><span class="u">m</span></div>
+      <div class="cote"><span class="let">E</span><span class="lab">Hauteur du pignon <small>(sol → pointe)</small></span><input type="number" step="0.01" inputmode="decimal" id="cE"><span class="u">m</span></div>
+
+      <label style="margin-top:18px">Murs à isoler</label>
+      <div class="chips">
+        <input type="checkbox" name="murs" id="w1" value="Façade avant"><label for="w1">Façade avant</label>
+        <input type="checkbox" name="murs" id="w2" value="Façade arrière"><label for="w2">Façade arrière</label>
+        <input type="checkbox" name="murs" id="w3" value="Pignon gauche"><label for="w3">Pignon gauche</label>
+        <input type="checkbox" name="murs" id="w4" value="Pignon droit"><label for="w4">Pignon droit</label>
+        <input type="checkbox" name="murs" id="w5" value="Toute la maison"><label for="w5">Toute la maison</label>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Fenêtres et portes</h2>
+      <p class="sub">Ajoutez chaque type d'ouverture. Si plusieurs sont identiques, indiquez le nombre.</p>
+      <div id="ouvertures"></div>
+      <button type="button" class="b-small" onclick="addOuv()">+ Ajouter une ouverture</button>
+    </div>
+
+    <div class="card">
+      <h2>Petits détails</h2>
+      <div class="cote"><span class="lab">Descentes d'eau pluviale</span><input type="number" min="0" inputmode="numeric" id="dep" placeholder="0"><span class="u"></span></div>
+      <div class="cote"><span class="lab">Grilles de ventilation</span><input type="number" min="0" inputmode="numeric" id="grilles" placeholder="0"><span class="u"></span></div>
+      <label for="remarques">Autre chose à signaler ? <small>(store banne, compteur, véranda…)</small></label>
+      <textarea id="remarques" rows="3"></textarea>
+    </div>
+  </section>
+
+  <!-- ÉTAPE 4 : PHOTOS -->
+  <section class="step hide" data-step="4">
+    <div class="card">
+      <h2>Photos de votre maison</h2>
+      <p class="sub">2 à 6 photos : chaque mur en entier, plus un croquis si vous en avez fait un.</p>
+      <label class="drop">📷 Prendre ou choisir des photos<input type="file" id="fichiers" accept="image/*" multiple></label>
+      <div class="photos" id="photos"></div>
+      <div class="tip">💡 Reculez pour avoir le mur entier dans la photo, du sol au toit. Inutile de vous mettre face au mur, une photo de biais convient.</div>
+    </div>
+  </section>
+
+  <!-- ÉTAPE 5 : ENVOI -->
+  <section class="step hide" data-step="5">
+    <div class="card">
+      <h2>Vérifiez et envoyez</h2>
+      <p class="sub">Voici le résumé de votre demande :</p>
+      <div class="recap" id="recap"></div>
+      <div class="err" id="err5"></div>
+    </div>
+  </section>
+
+  <!-- MERCI -->
+  <section class="step hide" data-step="6">
+    <div class="card ok">
+      <div class="big">✅</div>
+      <h2>Merci, c'est bien reçu !</h2>
+      <p class="sub">Stéphane étudie votre maison et revient vers vous très vite avec votre devis estimatif.</p>
+      <p class="sub" id="okPhotos"></p>
+      <button type="button" class="b-wa" onclick="openWA(true)">💬 M'envoyer aussi les photos par WhatsApp</button>
+    </div>
+  </section>
+
+  </form>
+
+  <div class="contact">
+    <div class="nom">Stéphane Renaud, Ouest Eco Logis</div>
+    <a href="tel:+33645624285">06 45 62 42 85</a>
+    <a href="mailto:s.renaud@ouest-eco-logis.fr" style="font-size:1rem">s.renaud@ouest-eco-logis.fr</a>
+  </div>
+</main>
+
+<footer>Ouest Eco Logis, isolation par l'extérieur Uniso. Vos données ne servent qu'à répondre à votre demande. Pour les faire supprimer, écrivez à s.renaud@ouest-eco-logis.fr.</footer>
+
+<div class="btns" id="nav"><div>
+  <button type="button" class="b-sec" id="bPrev" onclick="go(-1)">← Retour</button>
+  <button type="button" class="b-prim" id="bNext" onclick="go(1)">Continuer →</button>
+</div></div>
+
+<script>
+/* ============ RÉGLAGES ============ */
+const EMAIL_DEST = "s.renaud@ouest-eco-logis.fr";   // e-mail qui reçoit les demandes (via FormSubmit, gratuit)
+const WHATSAPP   = "33645624285";                   // n° WhatsApp au format international, sans + ni espaces
+const MAX_PHOTOS = 6;
+/* ================================= */
+
+const ENDPOINT = "https://formsubmit.co/ajax/" + EMAIL_DEST;
+const params = new URLSearchParams(location.search);
+const SOURCE = params.get("src") || params.get("utm_source") || "direct";   // ex. ?src=fb-broons
+if (params.get("commune")) document.getElementById("commune").value = params.get("commune");
+if (params.get("cp")) document.getElementById("cp").value = params.get("cp");
+
+let step = 1, photos = [], leadSent = false, ouvN = 0;
+const $ = id => document.getElementById(id);
+const val = id => ($(id).value || "").trim();
+const radio = n => (document.querySelector(`input[name="${n}"]:checked`) || {}).value || "";
+const checks = n => [...document.querySelectorAll(`input[name="${n}"]:checked`)].map(i => i.value).join(", ");
+const labels = ["Vos coordonnées", "Votre maison", "Les mesures", "Les photos", "Envoi"];
+
+/* ---- Sauvegarde locale (si le client quitte et revient) ---- */
+function save(){
+  try{
+    const d = {};
+    document.querySelectorAll("#f input, #f select, #f textarea").forEach(el => {
+      if (!el.id || el.type === "file") return;
+      d[el.id] = (el.type === "checkbox" || el.type === "radio") ? el.checked : el.value;
+    });
+    d._ouv = getOuv(); d._lead = leadSent;
+    localStorage.setItem("uniso_estim", JSON.stringify(d));
+  }catch(e){}
+}
+function load(){
+  try{
+    const d = JSON.parse(localStorage.getItem("uniso_estim") || "null"); if (!d) return;
+    (d._ouv || []).forEach(o => addOuv(o));
+    leadSent = !!d._lead;
+    Object.entries(d).forEach(([k,v]) => { const el = $(k); if (!el) return;
+      if (el.type === "checkbox" || el.type === "radio") el.checked = v; else if (!el.value) el.value = v; });
+  }catch(e){}
+}
+document.addEventListener("input", save);
+document.addEventListener("change", save);
+
+/* ---- Ouvertures ---- */
+function addOuv(o){
+  o = o || {};
+  const id = "o" + (ouvN++);
+  const div = document.createElement("div");
+  div.className = "ouv"; div.id = id;
+  div.innerHTML = `<button type="button" class="x" onclick="this.parentNode.remove();save()">×</button>
+    <div class="row"><div><div class="mini">Type</div><select class="o-type">
+      ${["Fenêtre","Porte-fenêtre","Porte d'entrée","Baie vitrée","Porte de garage","Vélux / autre"].map(t=>`<option ${o.type===t?"selected":""}>${t}</option>`).join("")}
+    </select></div><div><div class="mini">Sur quel mur</div><select class="o-mur">
+      ${["Façade avant","Façade arrière","Pignon gauche","Pignon droit"].map(t=>`<option ${o.mur===t?"selected":""}>${t}</option>`).join("")}
+    </select></div></div>
+    <div class="row"><div><div class="mini">Largeur (m)</div><input type="number" step="0.01" inputmode="decimal" class="o-l" value="${o.l||""}"></div>
+    <div><div class="mini">Hauteur (m)</div><input type="number" step="0.01" inputmode="decimal" class="o-h" value="${o.h||""}"></div>
+    <div><div class="mini">Nombre</div><input type="number" min="1" inputmode="numeric" class="o-n" value="${o.n||1}"></div></div>`;
+  $("ouvertures").appendChild(div);
+}
+function getOuv(){
+  return [...document.querySelectorAll(".ouv")].map(d => ({
+    type: d.querySelector(".o-type").value, mur: d.querySelector(".o-mur").value,
+    l: d.querySelector(".o-l").value, h: d.querySelector(".o-h").value, n: d.querySelector(".o-n").value || 1
+  }));
+}
+
+/* ---- Photos (compressées pour l'envoi) ---- */
+$("fichiers").addEventListener("change", async e => {
+  for (const f of e.target.files){
+    if (photos.length >= MAX_PHOTOS) break;
+    try{ photos.push(await compress(f)); }catch(err){}
+  }
+  e.target.value = ""; renderPhotos();
+});
+function compress(file){
+  return new Promise((res, rej) => {
+    const img = new Image(), url = URL.createObjectURL(file);
+    img.onload = () => {
+      const max = 1600, r = Math.min(1, max / Math.max(img.width, img.height));
+      const c = document.createElement("canvas");
+      c.width = Math.round(img.width * r); c.height = Math.round(img.height * r);
+      c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+      c.toBlob(b => { URL.revokeObjectURL(url);
+        if (!b) return rej();
+        res({ blob: b, url: URL.createObjectURL(b), name: `photo-${photos.length+1}.jpg` });
+      }, "image/jpeg", 0.72);
+    };
+    img.onerror = rej; img.src = url;
+  });
+}
+function renderPhotos(){
+  $("photos").innerHTML = photos.map((p,i) =>
+    `<div><img src="${p.url}" alt=""><button type="button" onclick="photos.splice(${i},1);renderPhotos()">×</button></div>`).join("");
+}
+
+/* ---- Résumé texte ---- */
+function recapText(){
+  const L = [];
+  L.push("DEMANDE D'ESTIMATION UNISO");
+  L.push(`Nom : ${val("nom")}`);
+  L.push(`Tél : ${val("tel")}`);
+  L.push(`E-mail : ${val("email")}`);
+  L.push(`Commune : ${val("cp")} ${val("commune")}`);
+  L.push(`Contact préféré : ${radio("pref")}`);
+  L.push("");
+  L.push(`Construction : ${radio("annee") || "?"} | Mur : ${radio("mur") || "?"} | Volets : ${radio("volets") || "?"}`);
+  L.push(`Aspect : ${radio("aspect") || "?"} | Coloris : ${val("coloris") || "?"}`);
+  L.push(`Épaisseur : ${radio("ep") || "?"} | ${radio("pose") || "Pose ?"}`);
+  L.push("");
+  L.push(`Murs à isoler : ${checks("murs") || "?"}`);
+  L.push(`A longueur façade : ${val("cA") || "?"} m`);
+  L.push(`B hauteur gauche : ${val("cB") || "?"} m`);
+  L.push(`C hauteur droite : ${val("cC") || "?"} m`);
+  L.push(`D largeur pignon : ${val("cD") || "?"} m`);
+  L.push(`E hauteur pignon : ${val("cE") || "?"} m`);
+  const o = getOuv();
+  if (o.length){ L.push("Ouvertures :"); o.forEach(x => L.push(` - ${x.n} × ${x.type} ${x.l||"?"} × ${x.h||"?"} m (${x.mur})`)); }
+  L.push(`Descentes EP : ${val("dep") || 0} | Grilles ventilation : ${val("grilles") || 0}`);
+  if (val("remarques")) L.push(`Remarques : ${val("remarques")}`);
+  L.push("");
+  L.push(`Photos jointes : ${photos.length}`);
+  L.push(`Source : ${SOURCE}`);
+  return L.join("\n");
+}
+
+/* ---- Envoi FormSubmit ---- */
+async function sendLead(complet){
+  const fd = new FormData();
+  fd.append("_subject", (complet ? "🏠 Demande d'estimation Uniso : " : "📇 Nouveau contact (en cours) : ") + val("nom") + " – " + val("commune"));
+  fd.append("_template", "box");
+  fd.append("_captcha", "false");
+  fd.append("Etape", complet ? "Demande COMPLÈTE" : "Coordonnées seulement (formulaire pas encore terminé)");
+  fd.append("Nom", val("nom")); fd.append("Téléphone", val("tel")); fd.append("E-mail", val("email"));
+  fd.append("Commune", val("cp") + " " + val("commune")); fd.append("Contact préféré", radio("pref"));
+  fd.append("Source", SOURCE);
+  if (val("email")) fd.append("_replyto", val("email"));
+  if (complet){
+    fd.append("Détail", recapText());
+    photos.forEach((p,i) => fd.append("photo" + (i+1), p.blob, p.name));
+  }
+  const r = await fetch(ENDPOINT, { method: "POST", body: fd, headers: { "Accept": "application/json" } });
+  if (!r.ok) throw new Error("HTTP " + r.status);
+  return r.json();
+}
+
+/* ---- WhatsApp / mail ---- */
+function openWA(apresEnvoi){
+  const txt = apresEnvoi
+    ? `Bonjour Stéphane, je viens d'envoyer ma demande d'estimation (${val("nom")}, ${val("commune")}). Voici mes photos :`
+    : recapText();
+  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(txt)}`, "_blank");
+}
+function openMail(){
+  location.href = `mailto:${EMAIL_DEST}?subject=${encodeURIComponent("Demande d'estimation Uniso – " + val("nom"))}&body=${encodeURIComponent(recapText() + "\n\n(Pensez à joindre vos photos)")}`;
+}
+
+/* ---- Navigation ---- */
+function validate1(){
+  const tel = val("tel").replace(/\D/g, ""), mail = val("email");
+  if (!val("nom")) return "Indiquez votre nom.";
+  if (tel.length < 10 && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)) return "Indiquez au moins un téléphone ou un e-mail valide.";
+  if (!val("commune") && !val("cp")) return "Indiquez votre commune.";
+  if (!$("rgpd").checked) return "Cochez la case pour accepter d'être recontacté(e).";
+  return "";
+}
+async function go(dir){
+  if (dir > 0 && step === 1){
+    const e = validate1(); $("err1").textContent = e; if (e) return;
+    if (!leadSent){ leadSent = true; save(); sendLead(false).catch(() => { leadSent = false; save(); }); }
+  }
+  if (dir > 0 && step === 5){ return envoyer(); }
+  step = Math.max(1, Math.min(5, step + dir));
+  show();
+}
+async function envoyer(){
+  const b = $("bNext"); b.disabled = true; b.textContent = "Envoi en cours…"; $("err5").textContent = "";
+  try{
+    await sendLead(true);
+    try{ localStorage.removeItem("uniso_estim"); }catch(e){}
+    $("okPhotos").textContent = photos.length ? `${photos.length} photo(s) bien envoyée(s).` : "Vous pouvez aussi m'envoyer vos photos par WhatsApp :";
+    step = 6; show();
+  }catch(err){
+    $("err5").innerHTML = "L'envoi n'a pas fonctionné (connexion ?). Pas de souci : envoyez votre demande par WhatsApp ou par e-mail avec les boutons ci-dessous.";
+    b.disabled = false; b.textContent = "Réessayer l'envoi";
+  }
+}
+function show(){
+  document.querySelectorAll(".step").forEach(s => s.classList.toggle("hide", +s.dataset.step !== step));
+  document.querySelectorAll("#progress span").forEach((s,i) => s.classList.toggle("on", i < step));
+  $("steplabel").textContent = step <= 5 ? `Étape ${step} sur 5 : ${labels[step-1]}` : "";
+  $("progress").classList.toggle("hide", step > 5);
+  $("nav").classList.toggle("hide", step > 5);
+  $("bPrev").style.visibility = step === 1 ? "hidden" : "visible";
+  const b = $("bNext"); b.disabled = false;
+  b.textContent = step === 5 ? "✅ Envoyer ma demande" : "Continuer →";
+  if (step === 5){
+    $("recap").textContent = recapText();
+    if (!document.getElementById("altBtns")){
+      const d = document.createElement("div"); d.id = "altBtns";
+      d.innerHTML = `<button type="button" class="b-wa" onclick="openWA(false)">💬 Envoyer plutôt par WhatsApp</button>
+                     <button type="button" class="b-mail" onclick="openMail()">✉️ Envoyer plutôt par e-mail</button>`;
+      $("recap").parentNode.appendChild(d);
+    }
+  }
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+load();
+if (!document.querySelector(".ouv")) addOuv();
+show();
+</script>
+</body>
+</html>
