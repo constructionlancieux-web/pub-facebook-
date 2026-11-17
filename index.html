@@ -35,8 +35,8 @@ h2{margin:0 0 10px;font-size:1.1rem;display:flex;align-items:center}
 .photos img{width:100%;height:100%;object-fit:cover}
 .photos button{position:absolute;top:3px;right:3px;background:rgba(0,0,0,.6);color:#fff;border:none;border-radius:50%;width:24px;height:24px;padding:0;font-size:.9rem}
 .aide{font-size:.88rem;color:var(--gris);margin:0 0 10px}
-details{margin-top:10px;font-size:.88rem}
-summary{color:var(--vert-f);font-weight:600;cursor:pointer}
+.exemple{margin-top:12px}
+.extitre{font-weight:700;font-size:.92rem;color:var(--vert-f)}
 svg.ex{width:100%;height:auto;background:#fffdf5;border:1px solid #eee3c4;border-radius:8px;margin-top:8px}
 label.l{display:block;font-weight:600;font-size:.92rem;margin:10px 0 4px}
 input[type=text],input[type=tel],input[type=email]{width:100%;padding:12px;border:1.5px solid var(--bord);border-radius:10px;font-size:1rem;font-family:inherit}
@@ -86,23 +86,48 @@ footer{text-align:center;font-size:.75rem;color:var(--gris);padding:0 16px 24px}
     <p class="aide">📷 2 ou 3 photos de la maison (les murs en entier), plus 📝 la photo de votre croquis avec les mesures, fait à la main sur papier.</p>
     <label class="drop">📷 Ajouter les photos<input type="file" id="fichiers" accept="image/*" multiple></label>
     <div class="photos" id="photos"></div>
-    <details>
-      <summary>Voir un exemple de croquis</summary>
-      <svg class="ex" viewBox="0 0 340 170">
-        <g fill="none" stroke="#333" stroke-width="2" stroke-linejoin="round">
-          <path d="M20 135 L20 60 L170 60 L170 135 Z"/>
-          <path d="M215 135 L215 70 L265 30 L315 70 L315 135 Z"/>
+    <div class="exemple">
+      <div class="extitre">📝 Exemple de croquis à faire sur papier</div>
+      <svg class="ex" viewBox="0 0 360 250">
+        <defs><marker id="fl" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c62828"/></marker></defs>
+        <g font-family="Comic Sans MS,Segoe Print,cursive" font-size="12" fill="#333"><text x="80" y="18">FAÇADE</text><text x="248" y="18">PIGNON</text></g>
+        <!-- façade -->
+        <g fill="none" stroke="#333" stroke-width="2"><rect x="32" y="80" width="140" height="110"/></g>
+        <g fill="#e3eef8" stroke="#555" stroke-width="1.4"><rect x="50" y="110" width="34" height="34"/><rect x="118" y="130" width="28" height="60"/></g>
+        <g stroke="#c62828" stroke-width="1.2" fill="none" marker-start="url(#fl)" marker-end="url(#fl)">
+          <line x1="32" y1="205" x2="172" y2="205"/>
+          <line x1="18" y1="80" x2="18" y2="190"/>
+          <line x1="50" y1="100" x2="84" y2="100"/><line x1="92" y1="110" x2="92" y2="144"/>
+          <line x1="118" y1="122" x2="146" y2="122"/><line x1="156" y1="130" x2="156" y2="190"/>
         </g>
-        <g fill="none" stroke="#666" stroke-width="1.5"><rect x="40" y="78" width="24" height="28"/><rect x="125" y="78" width="24" height="28"/><rect x="84" y="95" width="22" height="40"/><rect x="254" y="80" width="22" height="26"/></g>
-        <g font-family="Comic Sans MS,cursive" font-size="13" fill="#c62828">
-          <text x="70" y="155">10,20 m</text><text x="0" y="102" transform="rotate(-90 12 100)">2,60 m</text>
-          <text x="240" y="155">7,50 m</text><text x="320" y="90">5,40</text>
-          <text x="38" y="74" font-size="10">1,20×1,15</text><text x="80" y="91" font-size="10">0,90×2,15</text>
+        <g font-family="Comic Sans MS,Segoe Print,cursive" font-size="11" fill="#c62828" font-weight="700">
+          <text x="80" y="220">10,20</text>
+          <text x="13" y="140" transform="rotate(-90 13 140)">2,60</text>
+          <text x="54" y="96">1,20</text><text x="95" y="131">1,15</text>
+          <text x="117" y="118">0,90</text><text x="159" y="164">2,15</text>
         </g>
-        <g font-family="Comic Sans MS,cursive" font-size="12" fill="#333"><text x="65" y="22">Façade</text><text x="242" y="18">Pignon</text></g>
+        <!-- pignon -->
+        <g fill="none" stroke="#333" stroke-width="2" stroke-linejoin="round"><path d="M210 190 L210 105 L270 40 L330 105 L330 190 Z"/></g>
+        <line x1="270" y1="40" x2="270" y2="190" stroke="#999" stroke-dasharray="4 4"/>
+        <g fill="#e3eef8" stroke="#555" stroke-width="1.4"><rect x="280" y="125" width="26" height="32"/></g>
+        <g stroke="#c62828" stroke-width="1.2" fill="none" marker-start="url(#fl)" marker-end="url(#fl)">
+          <line x1="210" y1="205" x2="330" y2="205"/>
+          <line x1="198" y1="105" x2="198" y2="190"/>
+          <line x1="342" y1="105" x2="342" y2="190"/>
+          <line x1="258" y1="44" x2="258" y2="190"/>
+          <line x1="280" y1="117" x2="306" y2="117"/><line x1="313" y1="125" x2="313" y2="157"/>
+        </g>
+        <g font-family="Comic Sans MS,Segoe Print,cursive" font-size="11" fill="#c62828" font-weight="700">
+          <text x="256" y="220">7,50</text>
+          <text x="193" y="160" transform="rotate(-90 193 160)">2,60 gauche</text>
+          <text x="352" y="128" transform="rotate(90 352 128)">2,60 droite</text>
+          <text x="254" y="150" transform="rotate(-90 254 150)">5,40 centre</text>
+          <text x="281" y="113">1,00</text><text x="318" y="131" transform="rotate(90 318 131)">1,10</text>
+        </g>
+        <text x="180" y="243" text-anchor="middle" font-size="10.5" fill="#5f6b66">Mesures en mètres. Pour chaque porte et fenêtre : largeur + hauteur.</text>
       </svg>
-      <p class="aide" style="margin-top:6px">Longueur et hauteur de chaque mur, hauteur du pignon jusqu'à la pointe, et taille des fenêtres et portes. À 10 cm près, c'est suffisant.</p>
-    </details>
+      <p class="aide" style="margin:6px 0 0">Pour chaque mur : la longueur et la hauteur. Pour le pignon : la hauteur à gauche, à droite et au centre (jusqu'à la pointe). À 10 cm près, c'est suffisant.</p>
+    </div>
   </div>
 
   <div class="card">
@@ -153,8 +178,13 @@ const MAX_PHOTOS = 6;
 const $ = id => document.getElementById(id);
 const v = id => ($(id).value || "").trim();
 const P = new URLSearchParams(location.search);
-const SOURCE = P.get("src") || "direct";
+// lien court : .../?broons  → commune « Broons », source fb-broons
+const RAW = location.search.slice(1);
+const SLUG = RAW && !RAW.includes("=") ? decodeURIComponent(RAW) : "";
+const SOURCE = P.get("src") || (SLUG ? "fb-" + SLUG : "direct");
+const nomDeSlug = s => s.split("-").map(m => ["sur","sous","en","de","du","la","le","les","d","l"].includes(m) ? m : m.charAt(0).toUpperCase() + m.slice(1)).join("-");
 if (P.get("commune")) $("commune").value = P.get("commune");
+else if (SLUG) $("commune").value = nomDeSlug(SLUG);
 if (P.get("pose") === "kit") $("kit").checked = true;
 if (P.get("pose") === "pose") $("ent").checked = true;
 let photos = [];
